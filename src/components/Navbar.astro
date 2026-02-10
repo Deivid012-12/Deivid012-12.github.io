@@ -26,7 +26,7 @@
 </nav>
 
 <style>
-  /* --- Estilos Base --- */
+  
   .navbar {
     background: #ffffff;
     padding: 16px 0;
@@ -53,7 +53,7 @@
     margin: 0;
   }
 
-  /* --- Links para Desktop --- */
+  
   .nav-links {
     display: flex;
     align-items: center;
@@ -105,10 +105,10 @@
   }
 
   .github-btn::after {
-    display: none; /* Quitamos la línea inferior solo al botón */
+    display: none; 
   }
 
-  /* --- Estilos Menú Hamburguesa --- */
+  
   .menu-toggle {
     display: none;
     flex-direction: column;
@@ -127,7 +127,7 @@
     transition: 0.3s ease;
   }
 
-  /* --- Responsive (Móvil) --- */
+  
   @media (max-width: 768px) {
     .menu-toggle {
       display: flex;
@@ -135,21 +135,21 @@
 
     .nav-links {
       position: absolute;
-      top: 100%; /* Aparece justo debajo de la navbar */
+      top: 100%; 
       left: 0;
       width: 100%;
       background: #ffffff;
       flex-direction: column;
       padding: 0;
-      max-height: 0; /* Efecto de colapso */
+      max-height: 0; 
       overflow: hidden;
       transition: max-height 0.3s ease-out, padding 0.3s ease;
       border-bottom: 0px solid #e5e7eb;
     }
 
-    /* Clase que se activará con JS */
+    
     .nav-links.active {
-      max-height: 400px; /* Suficiente espacio para los links */
+      max-height: 400px; 
       padding: 20px 0;
       border-bottom: 1px solid #e5e7eb;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -168,7 +168,7 @@
       width: auto;
     }
 
-    /* Animación simple para la hamburguesa al abrir */
+    
     .active-toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .active-toggle .bar:nth-child(2) { opacity: 0; }
     .active-toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -176,7 +176,7 @@
 </style>
 
 <script>
-  // Lógica para abrir/cerrar menú
+  
   const menuBtn = document.getElementById('mobile-menu');
   const navLinks = document.getElementById('nav-list');
 
@@ -186,7 +186,7 @@
       menuBtn.classList.toggle('active-toggle');
     });
 
-    // Cerrar menú automáticamente al hacer clic en un link
+    
     const links = navLinks.querySelectorAll('a');
     links.forEach(link => {
       link.addEventListener('click', () => {
