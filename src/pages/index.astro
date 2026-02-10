@@ -1,11 +1,47 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Presentation from "../components/Presentation.astro";
+import Cards from "../components/Cards.astro";
+import Evidences from "../components/Evidences.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout>
+
+  <Navbar />
+  <Hero />
+  <Presentation />
+  <Cards />
+  <Evidences />
+  <Footer />
+<button class="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+<style>
+.toTop{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:8px;
+  background:#3e3f66;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+  transition:.2s;
+}
+
+.toTop:hover{
+  transform:translateY(-3px);
+  background:#3b3961;
+}
+</style>
+
+</MainLayout>

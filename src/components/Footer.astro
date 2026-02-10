@@ -1,0 +1,119 @@
+<footer class="footer">
+  <div class="container footer-container">
+
+    
+    <div class="footer-brand">
+      <h3>Mi E-Portafolio</h3>
+      <p>© 2026 — Desarrollo académico y profesional.</p>
+    </div>
+
+    
+    <div class="footer-links">
+      <a href="#">Inicio</a>
+      <a href="#Presentation">Presentación</a>
+      <a href="#Evidences">Evidencias</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+    </div>
+
+    
+    <div class="footer-contact">
+      <p>Contacto</p>
+      <span>derodriguezp@unbosque.edu.co</span>
+    </div>
+
+  </div>
+</footer>
+<style>
+
+.footer{
+  background: #020617; 
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 35px 0;
+  color: #9ca3af;
+}
+
+
+.footer-container{
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 20px;
+}
+
+/* MARCA */
+.footer-brand h3{
+  color: #f1f5f9;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.footer-brand p{
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+
+.footer-links{
+  text-align: center;
+}
+
+.footer-links a{
+  color: #9ca3af;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.25s;
+  position: relative;
+}
+
+
+.footer-links a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #e5e7eb;
+  transition: 0.25s;
+}
+
+.footer-links a:hover{
+  color: #f9fafb;
+}
+
+.footer-links a:hover::after{
+  width: 100%;
+}
+
+
+.footer-contact{
+  text-align: right;
+}
+
+.footer-contact p{
+  color: #e5e7eb;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.footer-contact span{
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+
+@media (max-width: 768px){
+  .footer-container{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-contact{
+    text-align: center;
+  }
+}
+</style>

@@ -1,0 +1,148 @@
+<section id="Evidences" class="section reveal">
+  <div class="container">
+    ```
+    <h2 class="title">Evidencias</h2>
+
+    <div class="cards">
+      <a href="modelado.html" target="_blank" class="card">
+        <div class="card-icon">📊</div>
+        <h3>Modelado</h3>
+        <p>
+          Diseño de diagramas entidad-relación, análisis de requerimientos y
+          estructuración lógica de bases de datos.
+        </p>
+      </a>
+
+      <a href="normalizacion.html" target="_blank" class="card">
+        <div class="card-icon">🧩</div>
+        <h3>Normalización</h3>
+        <p>
+          Aplicación de formas normales para optimizar la integridad,
+          consistencia y eficiencia de la información.
+        </p>
+      </a>
+
+      <a href="sql.html" target="_blank" class="card">
+        <div class="card-icon">💾</div>
+        <h3>SQL</h3>
+        <p>
+          Consultas, creación de tablas, relaciones, procedimientos almacenados
+          y manipulación avanzada de datos.
+        </p>
+      </a>
+
+      <a href="proyecto.html" target="_blank" class="card">
+        <div class="card-icon">🚀</div>
+        <h3>Proyecto</h3>
+        <p>
+          Desarrollo completo aplicando modelado, normalización e implementación
+          en un sistema funcional.
+        </p>
+      </a>
+    </div>
+    ```
+  </div>
+</section>
+
+<style>
+ 
+  .card {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  
+  .section {
+    padding: 90px 0;
+    background: linear-gradient(180deg, #020617, #020617 60%, #030b1a);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+  }
+
+ 
+  .title {
+    color: #f9fafb;
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 45px;
+    letter-spacing: 0.3px;
+  }
+
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: linear-gradient(180deg, #0f172a, #0b1220);
+    padding: 26px 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    transition: all 0.28s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at top,
+      rgba(37, 99, 235, 0.15),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card-icon {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+  }
+
+  .card h3 {
+    color: #f1f5f9;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  .card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 65px 0;
+    }
+
+    .title {
+      font-size: 1.7rem;
+    }
+  }
+</style>
