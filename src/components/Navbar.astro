@@ -1,14 +1,21 @@
+
 <nav class="navbar">
   <div class="container">
     <h2 class="logo">Mi Portafolio</h2>
 
-    <div class="nav-links">
+    <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="nav-links" id="nav-list">
       <a href="#">Inicio</a>
       <a href="#Presentation">Presentación</a>
       <a href="#Evidences">Evidencias</a>
 
       <a 
-        href="https://github.com/" 
+        href="https://github.com/Deivid012-12" 
         target="_blank" 
         class="github-btn"
       >
@@ -19,99 +26,173 @@
 </nav>
 
 <style>
-
-
-.navbar{
-  background: #ffffff;
-  padding: 16px 0;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-
-.container{
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-.logo{
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  color: #1f2937;
-}
-
-
-.nav-links{
-  display: flex;
-  align-items: center;
-}
-
-.nav-links a{
-  position: relative;
-  color: #4b5563;
-  margin-left: 22px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s ease;
-}
-
-
-.nav-links a::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: #9ca3af;
-  transition: width 0.2s ease;
-}
-
-.nav-links a:hover{
-  color: #111827;
-}
-
-.nav-links a:hover::after{
-  width: 100%;
-}
-
-
-.github-btn{
-  margin-left: 24px;
-  padding: 6px 14px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
-  transition: all 0.2s ease;
-}
-
-
-.github-btn:hover{
-  background: #ffffff;
-  border-color: #d1d5db;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transform: translateY(-1px);
-  color: #111827;
-}
-
-
-@media (max-width: 768px){
-  .nav-links a{
-    margin-left: 14px;
-    font-size: 14px;
+  /* --- Estilos Base --- */
+  .navbar {
+    background: #ffffff;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
-  .logo{
-    font-size: 18px;
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-}
 
+  .logo {
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #1f2937;
+    margin: 0;
+  }
+
+  /* --- Links para Desktop --- */
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links a {
+    position: relative;
+    color: #4b5563;
+    margin-left: 22px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #9ca3af;
+    transition: width 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: #111827;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .github-btn {
+    margin-left: 24px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    transition: all 0.2s ease !important;
+  }
+
+  .github-btn:hover {
+    background: #ffffff;
+    border-color: #d1d5db;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+    color: #111827;
+  }
+
+  .github-btn::after {
+    display: none; /* Quitamos la línea inferior solo al botón */
+  }
+
+  /* --- Estilos Menú Hamburguesa --- */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #1f2937;
+    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+
+  /* --- Responsive (Móvil) --- */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%; /* Aparece justo debajo de la navbar */
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      flex-direction: column;
+      padding: 0;
+      max-height: 0; /* Efecto de colapso */
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease;
+      border-bottom: 0px solid #e5e7eb;
+    }
+
+    /* Clase que se activará con JS */
+    .nav-links.active {
+      max-height: 400px; /* Suficiente espacio para los links */
+      padding: 20px 0;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a {
+      margin: 12px 0;
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
+    }
+
+    .github-btn {
+      margin-left: 0;
+      margin-top: 10px;
+      width: auto;
+    }
+
+    /* Animación simple para la hamburguesa al abrir */
+    .active-toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .active-toggle .bar:nth-child(2) { opacity: 0; }
+    .active-toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
 </style>
+
+<script>
+  // Lógica para abrir/cerrar menú
+  const menuBtn = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-list');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuBtn.classList.toggle('active-toggle');
+    });
+
+    // Cerrar menú automáticamente al hacer clic en un link
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuBtn.classList.remove('active-toggle');
+      });
+    });
+  }
+</script>
