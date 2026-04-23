@@ -10,15 +10,28 @@ import Layout from "../layouts/MainLayout.astro";
       En esta sección se presentan los diagramas entidad-relación, análisis de
       requerimientos y diseño lógico de la base de datos.
     </p>
-    <p></p>
-    <h3>Modelo Entidad Relacion Biblioteca</h3>
-    <img src="./ModeloBiblioteca.png" alt="Modelo Entidad Relacion Biblioteca"> 
-    <h3>Modelo Entidad Relacion Clínica</h3>
-    <img src="./ModeloClinica.png" alt="Modelo Entidad Relacion Clinica">
-    <h3>Modelo Entidad Relacion Champions</h3>
-    <img src="./ModeloChampions.png" alt="Modelo Entidad Relacion Champions">  
 
-    <p class="coming">Próximamente se añadirán evidencias reales.</p>
+    <h3>Modelo Entidad Relacion Biblioteca</h3>
+    <img src="/src/assets/ModeloBiblioteca.png" alt="Modelo Entidad Relacion Biblioteca"> 
+
+    <h3>Modelo Entidad Relacion Clínica</h3>
+    <img src="/src/assets/ModeloClinica.png" alt="Modelo Entidad Relacion Clinica">
+
+    <h3>Modelo Entidad Relacion Champions</h3>
+    <img src="/src/assets/ModeloChampions.png" alt="Modelo Entidad Relacion Champions"> 
+
+    <h3>Modelos entidad relacion Taller MER-ER</h3>
+    <img src="/src/assets/1EjercicioTallerMER-ER.png">
+    <img src="/src/assets/2EjercicioTallerMER-ER.png">
+    <img src="/src/assets/3EjercicioTallerMER-ER.png">   
+    <img src="/src/assets/4EjercicioTallerMER-ER.png">      
+    <img src="/src/assets/5EjercicioTallerMER-ER.png">  
+    <img src="/src/assets/6EjercicioTallerMER-ER.png">  
+    <img src="/src/assets/7EjercicioTallerMER-ER.png">     
+
+    <p class="coming">Próximamente se añadirán más evidencias :)</p>
+
+    <a href="/" class="btn-home reveal">← Volver al inicio</a>
   </section>
 </Layout>
 
@@ -27,14 +40,13 @@ import Layout from "../layouts/MainLayout.astro";
     max-width: 900px;
     margin: 80px auto;
     padding: 40px;
-    background: #0f172a;
+    background: var(--bg-soft);
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,.5);
     text-align: center;
-    color: #e5e7eb;
+    color: var(--text);
   }
 
-  
   .page img {
     width: 100%;
     height: auto;
@@ -46,4 +58,34 @@ import Layout from "../layouts/MainLayout.astro";
     margin-top: 20px;
     opacity: .7;
   }
+
+  .btn-home {
+  position: fixed;
+  bottom: 30px;
+  left: 30px; 
+
+  padding: 12px 18px;
+  background: var(--bg-soft);
+  color: var(--text);
+  text-decoration: none;
+
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+
+ .btn-home:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(12, 12, 12, 0.4);
+}
 </style>
