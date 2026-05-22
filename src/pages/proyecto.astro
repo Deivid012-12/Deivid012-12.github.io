@@ -4,58 +4,197 @@ import Layout from "../layouts/MainLayout.astro";
 
 <Layout title="Proyecto">
   <section class="page">
-    <h1>Proyecto Final</h1>
+   <div class="ejercicio">
+  <p class="section-label">Proyecto Final</p>
+  <h3 class="section-title">DDeLi Postres — Plataforma de Venta de Postres Artesanales</h3>
+  <p class="requisitos">
+    DDeLi Postres es una plataforma digital orientada a la venta de postres artesanales. Permite a los clientes comprar postres predeterminados del catálogo, crear postres personalizados seleccionando ingredientes y toppings, suscribirse a planes mensuales y realizar pedidos especiales para eventos. El sistema gestiona usuarios, productos, pedidos, pagos, envíos, suscripciones y promociones.
+  </p>
 
-    <p>
-      Aquí se documenta el desarrollo completo del proyecto: modelado,
-      normalización, implementación en SQL y funcionamiento del sistema.
-    </p>
+  <div class="descargas">
+    <a href="./Propuesta del Proyecto - DDeLi Postres.pdf" download class="btn-descarga">
+      Propuesta del Proyecto (PDF)
+    </a>
+    <a href="./SupuestosDelNegocioDDeLi.pdf" download class="btn-descarga">
+       Supuestos del Negocio (PDF)
+    </a>
+    <a href="./Modelo Entidad–Relación-Extendido.pdf" download class="btn-descarga">
+       Modelo Entidad Relación y Modelo Entidad Relación extendido (PDF)
+    </a>
+    <a href="./Modelo Entidad Relación Data Modeler.pdf" download class="btn-descarga">
+       Modelo Entidad Relación Data Modeler (PDF)
+    </a>
+    <a href="./Documento de Álgebra Relacional.pdf" download class="btn-descarga">
+       Documento de Álgebra Relacional (PDF)
+    </a>
+    <a href="./Manual de Arquitectura e Implementación de la Base de Datos.pdf" download class="btn-descarga">
+       Manual de Arquitectura e implementación de la Base de Datos (PDF)
+    </a>
+    <a href="./READMEScripts.md" download class="btn-descarga">
+       README (SQL)
+    </a>
+    <a href="./Scripts de creación de objetos.sql" download class="btn-descarga">
+       Scripts de creación de objetos (SQL)
+    </a>
+    <a href="./Scripts de inserción de registros.sql" download class="btn-descarga">
+       Scripts de inserción de registros (SQL)
+    </a>
+    <a href="./Scripts varios.sql" download class="btn-descarga">
+       Scripts varios (SQL)
+    </a>
+    <a href="./Acta Proyecto DDeLi.pdf" download class="btn-descarga">
+       Acta de Constitución del proyecto (PDF)
+    </a>
+    <a href="./Acta de Cierre del Proyecto DDeLi.pdf" download class="btn-descarga">
+       Acta de Cierre del proyecto (PDF)
+    </a>
+    <a href="./Git hub Repositorio DDELI .pdf" download class="btn-descarga">
+       Link github y video demostrativo (PDF)
+    </a>
+    <p class="section-label">DOCUMENTOS ADICIONALES</p>
+    <a href="./Mockups del proyecto de DDELI.pdf" download class="btn-descarga">
+       Mockups del proyecto DDELI (PDF)
+    </a>
 
-    <p class="coming">
-      Puedes agregar capturas, diagramas, código o explicación técnica.
-    </p>
-    <a href="/" class="btn-home reveal">← Volver al inicio</a>
+
+  </div>
+</div>
   </section>
 </Layout>
 
 <style>
-  .page {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 40px;
-    background: #0f172a;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-    text-align: center;
-    color: #e5e7eb;
-  }
-   .btn-home {
+.page {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  text-align: center;
+  color: var(--text);
+}
+
+.page img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.coming {
+  margin-top: 20px;
+  opacity: .7;
+}
+
+.btn-home {
   position: fixed;
   bottom: 30px;
-  left: 30px; 
-
+  left: 30px;
   padding: 12px 18px;
   background: var(--bg-soft);
   color: var(--text);
   text-decoration: none;
-
   border-radius: 12px;
   border: 1px solid var(--border);
   font-size: 14px;
   font-weight: 500;
-
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
   backdrop-filter: blur(6px);
-
   transition: all 0.3s ease;
   z-index: 1000;
 }
 
-
- .btn-home:hover {
+.btn-home:hover {
   background: var(--accent);
   color: white;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 15px 35px rgba(12, 12, 12, 0.4);
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+
+.section-title {
+  margin-top: 4px;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.requisitos {
+  text-align: left;
+}
+
+.ejercicio {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.page a {
+  display: block;
+}
+
+.page a img {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.page a:hover img {
+  opacity: 0.85;
+  transform: scale(1.01);
+}
+.ejercicio img {
+  border: 1px solid var(--border);
+}
+
+.page > p {
+  margin-bottom: 2rem;
+}
+.ejercicio .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.5;
+  margin: 1.25rem 0 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: block;
+}
+
+.descargas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-descarga {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-descarga:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 </style>
