@@ -2,58 +2,219 @@
 import Layout from "../layouts/MainLayout.astro";
 ---
 
+
 <Layout title="Normalización">
   <section class="page">
     <h1>Normalización</h1>
-
     <p>
       Aquí se muestra la aplicación de Primera, Segunda y Tercera Forma Normal
       para eliminar redundancias y mejorar la integridad de la base de datos.
     </p>
 
-    <p class="coming">Aquí podrás añadir tus tablas antes y después.</p>
-    <a href="/" class="btn-home reveal">← Volver al inicio</a>
-  </section>
-</Layout>
+    <div class="ejercicio">
+  <p class="section-label">Material</p>
+  <h3 class="section-title">Taller de Normalización</h3>
+  <ul class="requisitos">
+    <li>Análisis y transformación de tablas con redundancias hacia 1FN, 2FN y 3FN.</li>
+    <li>Identificación de dependencias funcionales parciales y transitivas.</li>
+    <li>Aplicación de la Forma Normal de Boyce-Codd (BCNF) en casos avanzados.</li>
+    <li>6 ejercicios prácticos con tablas de proyectos, estudiantes, restaurante, visitas médicas y alquileres de DVD.</li>
+    <li>Justificación detallada de cada decisión de diseño en el proceso de normalización.</li>
+  </ul>
+  <div class="descargas">
+    <a href="./Taller_Normalizacion_Repaso.pdf" download class="btn-descarga">
+      Taller de Repaso — Enunciados (PDF)
+    </a>
+    <a href="./Taller_Normalizacion.xlsx" download class="btn-descarga">
+      Taller de Normalización — Respuestas (Excel)
+    </a>
+  </div>
+</div>
 
+<div class="ejercicio">
+  <p class="section-label">Taller Avanzado de Normalización</p>
+  <h3 class="section-title">Normalización hasta 3FN — Cuatro casos de dificultad elevada</h3>
+  <ul class="requisitos">
+    <li>Taller de cuatro ejercicios de alta complejidad con atributos adicionales, dependencias transitivas, grupos repetidos anidados y nuevas entidades.</li>
+    <li>Para cada ejercicio: identificar la llave primaria, justificar la forma normal de partida, documentar el proceso 1FN → 2FN → 3FN y entregar el esquema relacional final con claves primarias y foráneas.</li>
+  </ul>
+  <div class="descargas">
+    <a href="./Taller_Avanzado_Normalizacion_A.pdf" download class="btn-descarga">
+      Taller Avanzado — Enunciados (PDF)
+    </a>
+    <a href="./Taller_Normalización_Avanzado_Corrección.xlsx" download class="btn-descarga">
+      Taller Avanzado — Respuestas (Excel)
+    </a>
+    <a href="./Taller_Normalizacion_Avanzado_Justificacion_Corrección.pdf" download class="btn-descarga">
+      Taller Avanzado — Justificación y Corrección (PDF)
+    </a>
+  </div>
+</div>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 1</p>
+  <h3 class="section-title">Sistema de Envío Internacional de Mercancía — LOGISTIC SYSTEMS S.A.S.</h3>
+  <p class="requisitos">
+    La empresa LOGISTIC SYSTEMS S.A.S. presta servicios de envío puerta a puerta entre ciudades y países. Cada guía de envío puede amparar varios paquetes, es despachada por un empleado (conductor) en un vehículo determinado y va asociada a un plan tarifario que depende de la zona de destino. El sistema registra cada evento de rastreo (recogida, tránsito, aduana, entrega) y el medio de pago del cliente remitente. Toda la información parte de una única relación sin normalizar.
+  </p>
+  <ul class="requisitos">
+    <li>Identificar la llave primaria compuesta (num_guia, cod_paquete, cod_evento) y justificar su elección.</li>
+    <li>La relación inicial no cumple 1FN por grupos repetidos en cod_paquete y cod_evento; por tanto tampoco cumple 2FN ni 3FN.</li>
+    <li>Aplicar 1FN eliminando grupos repetidos de paquetes y eventos, 2FN eliminando dependencias parciales y 3FN eliminando dependencias transitivas (remitente, destinatario, ciudad, zona, empleado, vehículo, pago).</li>
+    <li>Esquema final en 3FN: tablas GUIA, PAQUETE, EVENTO, REMITENTE, DESTINATARIO, CIUDAD, ZONA, EMPLEADO, VEHICULO y PAGO.</li>
+  </ul>
+</div>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 2</p>
+  <h3 class="section-title">Sistema Integral de Video Club — STREAM&GO</h3>
+  <p class="requisitos">
+    La cadena STREAM&GO administra locales físicos que alquilan películas en DVD y Blu-ray. Cada película puede tener varias copias físicas (casetes), varios actores con roles diferentes, un director y pertenecer a una o más categorías. Los clientes se afilian con una membresía que determina un plan tarifario y una tarifa por día de alquiler. Cada alquiler registra casetes entregados, fechas de préstamo y devolución, y recargos por mora.
+  </p>
+  <ul class="requisitos">
+    <li>Grupos repetidos identificados: cod_cassette (un alquiler puede incluir varios casetes), cod_categoria (una película puede pertenecer a varias categorías) y cod_actor (una película puede tener varios actores).</li>
+    <li>Llave primaria compuesta mínima: PK (cod_alquiler, cod_cassette, cod_actor, cod_categoria).</li>
+    <li>Transición 1FN → 2FN → 3FN preservando dependencias y permitiendo join sin pérdida.</li>
+    <li>Esquema final en 3FN con mínimo 9 tablas: CLIENTE, MEMBRESIA, PLAN, SUCURSAL, ALQUILER, ALQUILER_CASSETTE, CASSETTE, PELICULA, DIRECTOR, CATEGORIA, PELICULA_CATEGORIA, ACTOR y PELICULA_ACTOR.</li>
+  </ul>
+</div>
+
+  </section>
+    <a href="/" class="btn-home reveal">← Volver al inicio</a>
+</Layout>
 <style>
-  .page {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 40px;
-    background: #0f172a;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-    text-align: center;
-    color: #e5e7eb;
-  }
-   .btn-home {
+ .page {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  text-align: center;
+  color: var(--text);
+}
+
+.page img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.coming {
+  margin-top: 20px;
+  opacity: .7;
+}
+
+.btn-home {
   position: fixed;
   bottom: 30px;
-  left: 30px; 
-
+  left: 30px;
   padding: 12px 18px;
   background: var(--bg-soft);
   color: var(--text);
   text-decoration: none;
-
   border-radius: 12px;
   border: 1px solid var(--border);
   font-size: 14px;
   font-weight: 500;
-
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
   backdrop-filter: blur(6px);
-
   transition: all 0.3s ease;
   z-index: 1000;
 }
 
-
- .btn-home:hover {
+.btn-home:hover {
   background: var(--accent);
   color: white;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 15px 35px rgba(12, 12, 12, 0.4);
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+
+.section-title {
+  margin-top: 4px;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.requisitos {
+  text-align: left;
+}
+
+.ejercicio {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.page a {
+  display: block;
+}
+
+.page a img {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.page a:hover img {
+  opacity: 0.85;
+  transform: scale(1.01);
+}
+.ejercicio img {
+  border: 1px solid var(--border);
+}
+
+.page > p {
+  margin-bottom: 2rem;
+}
+.ejercicio .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.5;
+  margin: 1.25rem 0 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: block;
+}
+
+.descargas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-descarga {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-descarga:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 </style>

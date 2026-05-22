@@ -5,87 +5,474 @@ import Layout from "../layouts/MainLayout.astro";
 <Layout title="Modelado">
   <section class="page">
     <h1>Modelado de Base de Datos</h1>
-
     <p>
       En esta sección se presentan los diagramas entidad-relación, análisis de
       requerimientos y diseño lógico de la base de datos.
     </p>
 
-    <h3>Modelo Entidad Relacion Biblioteca</h3>
-    <img src="./ModeloBiblioteca.png" alt="Modelo Entidad Relacion Biblioteca"> 
+    <div class="ejercicio">
+      <p class="section-label">Ejercicio 1</p>
+      <h3 class="section-title">Modelo Entidad Relación Biblioteca</h3>
+      <ul class="requisitos">
+        <li>Las personas socias de la biblioteca disponen de un código de socio y además necesitan almacenar su cédula, dirección, teléfono, nombre y apellidos.</li>
+        <li>La biblioteca almacena libros que presta a los socios, de ellos se almacena su título, año en el que se escribió el libro, nombre completo del autor (o autores), año en que se editó, en qué editorial fue y el ISBN.</li>
+        <li>Necesitamos poder indicar si un libro en la biblioteca está dañado o no.</li>
+      </ul>
+      <a href="./ModeloBiblioteca.png" target="_blank" rel="noopener">
+        <img src="./ModeloBiblioteca.png" alt="Modelo Entidad Relacion Biblioteca">
+      </a>
+    </div>
 
-    <h3>Modelo Entidad Relacion Clínica</h3>
-    <img src="./ModeloClinica.png" alt="Modelo Entidad Relacion Clinica">
+    <div class="ejercicio">
+      <p class="section-label">Ejercicio 2</p>
+      <h3 class="section-title">Modelo Entidad Relación Clínica</h3>
+      <ul class="requisitos">
+        <li>Los pacientes tienen una cédula, dirección, teléfonos de contacto, nombre y apellidos, fecha de nacimiento y edad.</li>
+        <li>Los médicos del Hospital también tienen su cédula, nombre completo, especialidad y celular.</li>
+        <li>Necesitamos poder indicar si un paciente ya pasó por Triage (en una fecha) y saber cuál es su nivel de esa evaluación.</li>
+      </ul>
+      <a href="./ModeloClinica.png" target="_blank" rel="noopener">
+        <img src="./ModeloClinica.png" alt="Modelo Entidad Relacion Clinica">
+      </a>
+    </div>
 
-    <h3>Modelo Entidad Relacion Champions</h3>
-    <img src="./ModeloChampions.png" alt="Modelo Entidad Relacion Champions"> 
+    <div class="ejercicio">
+      <p class="section-label">Ejercicio 3</p>
+      <h3 class="section-title">Modelo Entidad Relación Champions</h3>
+      <p class="requisitos">El equipo organizador de la University Champions League de la Universidad El Bosque requiere un sistema de información que almacene las estadísticas del torneo de fútbol del mes de Abril. La información requerida incluye:</p>
+      <ul class="requisitos">
+        <li>Equipos de fútbol, semestres y programas académicos</li>
+        <li>Información de cada jugador</li>
+        <li>Puntos obtenidos en cada juego</li>
+        <li>Tarjetas amarillas y rojas por cada jugador</li>
+        <li>Posiciones de la tabla en tiempo real</li>
+      </ul>
+      <a href="./ModeloChampions.png" target="_blank" rel="noopener">
+        <img src="./ModeloChampions.png" alt="Modelo Entidad Relacion Champions">
+      </a>
+    </div>
 
-    <h3>Modelos entidad relacion Taller MER-ER</h3>
-    <img src="./1EjercicioTallerMER-ER.png">
-    <img src="./2EjercicioTallerMER-ER.png">
-    <img src="./3EjercicioTallerMER-ER.png">   
-    <img src="./4EjercicioTallerMER-ER.png">      
-    <img src="./5EjercicioTallerMER-ER.png">  
-    <img src="./6EjercicioTallerMER-ER.png">  
-    <img src="./7EjercicioTallerMER-ER.png">     
+ 
+<h1>Modelos Entidad Relación Taller 1</h1>
 
-    <p class="coming">Próximamente se añadirán más evidencias :)</p>
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 1</p>
+  <h3 class="section-title">Empresa de Transportes</h3>
+  <p class="requisitos">
+    Se desea informatizar la gestión de una empresa de transportes que reparte paquetes por toda Colombia. 
+    Los encargados de llevar los paquetes son los Conductores, de los que se quiere guardar el número de 
+    cédula de ciudadanía, nombre, teléfono, dirección, salario y ciudad en la que vive. De los paquetes 
+    transportados interesa conocer el código de paquete, descripción, destinatario y dirección del destinatario. 
+    Un conductor distribuye muchos paquetes, y un paquete sólo puede ser distribuido por un conductor. De las 
+    ciudades a las que llegan los paquetes interesa guardar el código de ciudad y el nombre. Un paquete sólo 
+    puede llegar a una ciudad. Sin embargo, a una ciudad pueden llegar varios paquetes. De los camiones que 
+    llevan los Conductores, interesa conocer la matrícula, modelo, tipo y potencia. Un conductor puede conducir 
+    diferentes camiones en fechas diferentes, y un camión puede ser conducido por varios Conductores. 
+    Constrúyase un diagrama E-R. Indique cuáles son las entidades identificadas con los atributos, llaves 
+    primarias y llaves foráneas de cada una. Realice la reducción a tablas respectiva y documente todas las 
+    decisiones que se hagan acerca de restricciones de correspondencia.
+  </p>
+  <a href="./1EjercicioTallerMER-ER.png" target="_blank" rel="noopener">
+    <img src="./1EjercicioTallerMER-ER.png" alt="Diagrama ER Empresa de Transportes">
+  </a>
+</div>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 2</p>
+  <h3 class="section-title">Empresa de Bienes Raíces</h3>
+  <p class="requisitos">
+    Una empresa de bienes raíces realiza un seguimiento de las casas en venta y de los clientes que buscan 
+    comprar casas. Una casa en venta puede estar listada con esta firma o con otra diferente. Estar "listado" 
+    con una firma significa que el dueño de la casa tiene un contrato con un agente que trabaja para esa firma. 
+    Un agente de bienes raíces de la empresa se caracteriza por tener un nombre (compuesto por Primer nombre, 
+    Segundo Nombre, Primer Apellido y Segundo Apellido), cédula de ciudadanía, género, fecha de nacimiento 
+    (sobre la cual se obtiene la edad), una cantidad de ventas realizadas en el último mes y un código de agente 
+    único. Cada casa en el mercado tiene precio, dirección, propietario y una lista de características, como el 
+    número de dormitorios, baños, tipo de calefacción, electrodomésticos, tamaño del garaje, etc. Esta lista 
+    puede ser diferente para diferentes casas, y algunas características pueden estar presentes en algunas casas, 
+    pero faltar en otras. Asimismo, cada cliente tiene preferencias que se expresan en los mismos términos 
+    (el número de dormitorios, baños, etc.). Aparte de estas preferencias, los clientes especifican el rango 
+    de precios de las casas que les interesan.
+  </p>
+  <a href="./2EjercicioTallerMER-ER.png" target="_blank" rel="noopener">
+    <img src="./2EjercicioTallerMER-ER.png" alt="Diagrama ER Bienes Raíces">
+  </a>
+</div>
+
+    <div class="ejercicio">
+  <p class="section-label">Ejercicio 3</p>
+  <h3 class="section-title">Esquema de Base de Datos — Proveedores</h3>
+  <p class="requisitos">Considere el siguiente esquema de base de datos (estructura de tablas y relaciones) y dibuje el diagrama E-R del que podría haberse derivado:</p>
+  <ul class="requisitos">
+    <li><strong>Proveedor</strong> (SName, ItemName, Price): el proveedor SName vende el artículo ItemName al precio Price.</li>
+    <li><strong>Cliente</strong> (CName, Address): el CName del cliente vive en Address.</li>
+    <li><strong>Pedido</strong> (CName, SName, ItemName, Qty): el cliente CName ha pedido la cantidad del artículo ItemName al proveedor SName.</li>
+    <li><strong>Elemento</strong> (ItemName, Description): información sobre los elementos.</li>
+  </ul>
+  <a href="./3EjercicioTallerMER-ER.png" target="_blank" rel="noopener">
+    <img src="./3EjercicioTallerMER-ER.png" alt="Diagrama ER Proveedores">
+  </a>
+</div>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 4</p>
+  <h3 class="section-title">Biblioteca Comunitaria</h3>
+  <p class="requisitos">
+    Realizar el diseño conceptual (mediante un diagrama E-R) de las operaciones de una biblioteca comunitaria local. La biblioteca tiene libros, CD, cintas, etc., que se prestan a diferentes usuarios. Estos últimos cuentan con un número de cuenta único, direcciones, números telefónicos, fecha de nacimiento, entre otros. Si un artículo prestado está vencido (por fuera de la fecha límite de entrega), acumula penalización. Algunos usuarios son menores de edad (menores a 18 años), por lo que deben tener patrocinadores que sean responsables de pagar las multas (o reemplazar un libro en caso de pérdida).
+  </p>
+  <a href="./4EjercicioTallerMER-ER.png" target="_blank" rel="noopener">
+    <img src="./4EjercicioTallerMER-ER.png" alt="Diagrama ER Biblioteca Comunitaria">
+  </a>
+</div>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 5</p>
+  <h3 class="section-title">Cadena de Supermercados</h3>
+  <p class="requisitos">
+    Una cadena de supermercados está interesada en construir un sistema de apoyo a la decisión con el que pueda analizar las ventas de diferentes productos en diferentes supermercados en diferentes momentos. Cada supermercado está ubicado en área geográfica: una ciudad, que está en un estado, que está en una región. El tiempo en el que realizó una o más ventas se puede medir en días, meses y años. Los productos tienen nombres y categorías (productos, productos enlatados, etc.).
+  </p>
+  <a href="./5EjercicioTallerMER-ER.png" target="_blank" rel="noopener">
+    <img src="./5EjercicioTallerMER-ER.png" alt="Diagrama ER Supermercados">
+  </a>
+</div>
+
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 6</p>
+  <h3 class="section-title">Empresa de Préstamo — Análisis del Diagrama</h3>
+  <p class="requisitos">
+    Describa con sus propias palabras el contexto que describe el diagrama proveído, indicando claramente atributos, llaves primarias y llaves foráneas de cada una de las entidades allí descritas. Realice la respectiva reducción a tablas (análisis relacional).
+  </p>
+  <a href="./6EjercicioTallerMER-ER.png" target="_blank" rel="noopener">
+    <img src="./6EjercicioTallerMER-ER.png" alt="Diagrama ER Empresa de Préstamo">
+  </a>
+  <p class="requisitos">
+    Es una empresa de préstamo de sucursales, identificadas principalmente por el nombre de la sucursal, pero también se tiene la información de la ciudad de la misma y de si esta se encuentra activa. Los clientes se distinguen en el sistema principalmente por su id y a su vez, se registra su nombre, ciudad y calle; a estos se les concede un préstamo, identificado por su número único, y registrando su valor de importación. Estos clientes son previamente aconsejados por un empleado, identificado en sistema principalmente por su id, más también se registra su nombre, números de teléfono, el nombre de su o sus subordinados (en caso de que su rol sea de jefe), su fecha de ingreso y la antigüedad del mismo; adicionalmente, este puede ser un banquero o consejero, y le responde a un jefe. Al momento de realizar un préstamo, se debe realizar un pago, reconocido en sistema principalmente por su número de pago, se toma la fecha de pago y el importe pagado. No obstante, a los clientes se les impone, con fecha de acceso, una cuenta, establecida por su número de cuenta, junto con su saldo y el tipo de cuenta; si es una cuenta de ahorros, se registra su tipo de interés; en caso de ser cuenta corriente, se registra su descubierto.
+  </p>
+</div>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 7</p>
+  <h3 class="section-title">Oficina de Registro Universitario</h3>
+  <p class="requisitos">
+    Una oficina de registro de una universidad mantiene datos acerca de las siguientes entidades: (a) asignaturas, incluyendo el número, título, programa, y prerrequisitos; (b) ofertas de asignaturas, incluyendo número de asignatura, año, semestre, número de sección, profesor(es), horarios y aulas; (c) estudiantes, incluyendo id-estudiante, nombre y programa; y (d) profesores, incluyendo número de identificación, nombre, departamento y título. Además, la matrícula de los estudiantes en asignaturas y las notas concedidas a estudiantes en cada asignatura en la que están matriculados se deben modelar adecuadamente. Constrúyase un diagrama E-R para la oficina de registro.
+  </p>
+  <a href="./7EjercicioTallerMER-ER.png" target="_blank" rel="noopener">
+    <img src="./7EjercicioTallerMER-ER.png" alt="Diagrama ER Oficina de Registro">
+  </a>
+</div>
+
+<h2 class="section-title" style="text-align:center; margin-top: 3rem;">Taller Modelo Entidad Relación 3</h2>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 1</p>
+  <h3 class="section-title">Taller de Reparación de Vehículos — Universidad El Bosque</h3>
+  <p class="requisitos">
+    En el estacionamiento de la Universidad El Bosque se piensa implementar un espacio para la reparación de vehículos de los estudiantes, profesores y visitantes al centro médico Los Cobos. La idea es implementar una solución tecnológica y ustedes como Ingenieros de datos han sido seleccionados para diseñar el modelo de datos de una base de datos relacional, la cual maneja la información de sus clientes, los automóviles que atiende, los técnicos especializados que trabajan en el taller y los componentes que se usan en cada servicio.
+  </p>
+  <ul class="requisitos">
+    <li>Del propietario se guardan el número de identificación (NI), nombre completo, dirección postal y teléfono. Del automóvil se registran la placa, marca, color y fecha/hora de ingreso.</li>
+    <li>Se asigna un técnico principal para diagnóstico, quien puede solicitar apoyo de otros especialistas.</li>
+    <li>Los técnicos registran en una orden de trabajo los componentes utilizados y el costo de mano de obra.</li>
+    <li>La factura incluye datos del cliente, técnico, desglose de componentes con precio unitario, mano de obra, total con 21% de impuesto, y el valor en USD y EUR.</li>
+    <li><strong>Aceites:</strong> registran densidad. <strong>Filtros:</strong> registran tipo (aire, aceite, combustible). <strong>Baterías:</strong> registran amperaje y voltaje. <strong>Neumáticos:</strong> registran ancho, perfil y diámetro.</li>
+  </ul>
+  <a href="./Ejercicio8.png" target="_blank" rel="noopener">
+    <img src="./Ejercicio8.png" alt="Diagrama ER Taller de Vehículos">
+  </a>
+</div>
+
+   <div class="ejercicio">
+  <p class="section-label">Ejercicio 2</p>
+  <h3 class="section-title">Soluciones Innova — Empresa de Servicios Tecnológicos</h3>
+  <p class="requisitos">
+    Una empresa de servicios tecnológicos, "Soluciones Innova", ha decidido modernizar su sistema de gestión interno debido a que su plataforma anterior era ineficiente y no permitía registrar toda la información crucial para la toma de decisiones. Por ello, se ha encargado el desarrollo de un nuevo sistema de información con las siguientes especificaciones:
+  </p>
+  <ul class="requisitos">
+    <li>Se requiere almacenar la información de los clientes corporativos de la consultora. Por cada cliente, se necesita registrar su nombre de empresa, dirección, número de identificación tributaria (NIT), y es posible que tengan múltiples números de teléfono de contacto.</li>
+    <li>En la empresa se gestionan numerosos servicios que pueden ser contratados por uno o varios clientes a un precio que el gerente de proyecto define para cada contrato en particular.</li>
+    <li>Los clientes suelen contratar múltiples servicios. Se desea registrar estos contratos, así como las fechas de inicio y finalización planificadas para cada uno.</li>
+    <li>Independientemente del precio de venta, cada servicio tiene un costo interno asociado y una descripción que detalla sus objetivos principales.</li>
+    <li>Los gerentes de proyecto se identifican por un código de empleado. Su remuneración se basa en un salario fijo que puede diferir del sueldo recomendado para su rango. Cada gerente puede tener un superior directo de rango inmediatamente más alto.</li>
+    <li>Cada equipo de proyecto está formado por varios gerentes que pueden ser parte de otros equipos en paralelo. Si un servicio se cancela, el equipo deja de existir, pero los gerentes continúan en la base de datos.</li>
+  </ul>
+  <a href="./Ejercicio9.png" target="_blank" rel="noopener">
+    <img src="./Ejercicio9.png" alt="Diagrama ER Soluciones Innova">
+  </a>
+</div>
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio 3</p>
+  <h3 class="section-title">Sistema de Metro de Bogotá</h3>
+  <p class="requisitos">
+    Se requiere diseñar la base de datos para la gestión operativa del Sistema de Metro de Bogotá, asumiendo que ya cuenta con varias líneas en pleno funcionamiento. Los requisitos del sistema son los siguientes:
+  </p>
+  <ul class="requisitos">
+    <li><strong>Estructura de líneas:</strong> Una línea de metro se compone de una serie de estaciones en orden secuencial, y es crucial registrar esta secuencia para la operación.</li>
+    <li><strong>Conectividad de estaciones:</strong> Cada estación pertenece a al menos una línea. Las estaciones de transferencia pueden pertenecer a varias líneas. Una vez asignada a una línea, esta pertenencia es permanente.</li>
+    <li><strong>Gestión de accesos:</strong> Cada estación puede tener múltiples accesos (escaleras, ascensores, etc.). Un acceso está vinculado exclusivamente a una única estación de forma inmutable.</li>
+    <li><strong>Flota de trenes:</strong> Cada línea tiene su propia flota. Un tren puede estar en una sola línea a la vez o en mantenimiento sin línea asignada. La cantidad de trenes por línea debe ser mínimo igual al número de estaciones y máximo el doble.</li>
+    <li><strong>Patio de mantenimiento:</strong> Cada tren debe tener un patio asignado obligatoriamente para su resguardo. Puede reasignarse, pero nunca quedar sin uno.</li>
+    <li><strong>Necesidades de información:</strong> El sistema debe poder consultar todos los accesos disponibles para los pasajeros en cada línea.</li>
+  </ul>
+  <a href="./Ejercicio10.png" target="_blank" rel="noopener">
+    <img src="./Ejercicio10.png" alt="Diagrama ER Metro de Bogotá">
+  </a>
+</div>
+
+ <div class="ejercicio">
+  <p class="section-label">Ejercicio 4</p>
+  <h3 class="section-title">La Facultad — Gestión de Discoteca</h3>
+  <p class="requisitos">
+    "La Facultad", una taberna icónica frente a la Universidad El Bosque, es conocida por su vasta colección musical. Su dueño, "Don Juan", un apasionado melómano, desea organizar su catálogo. Para ello, necesita una base de datos que gestione toda su discoteca, almacenando información sobre las grabaciones, los artistas que participan y las productoras que las distribuyen:
+  </p>
+  <ul class="requisitos">
+    <li><strong>Grabaciones musicales:</strong> Se registra el título (identificador único), género musical (rock, jazz, salsa, etc.), cantidad de canciones y un campo de notas para detalles especiales como ediciones limitadas o en vivo.</li>
+    <li><strong>Formatos:</strong> Cada grabación puede existir en diferentes formatos (CD, vinilo, digital). Por cada formato se registra el estado de conservación (excelente, bueno, regular, etc.).</li>
+    <li><strong>Artistas:</strong> Se registra el nombre del artista y una breve biografía con sus logros. También se registra en qué grabaciones ha participado y la fecha de dicha participación.</li>
+    <li><strong>Productoras:</strong> Toda grabación está asociada a una productora, identificada por un ID único, con nombre y dirección.</li>
+  </ul>
+  <a href="./Ejercicio11.png" target="_blank" rel="noopener">
+    <img src="./Ejercicio11.png" alt="Diagrama ER La Facultad">
+  </a>
+</div>
+
+ <h2 class="section-title" style="text-align:center; margin-top: 3rem;">Primer Taller Grupal</h2>
+<div class="ejercicio">
+
+  <h3 class="section-title">Ejercicio Nómina</h3>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación</p>
+  <a href="./Ejercicio Nomina.png" target="_blank" rel="noopener">
+    <img src="./Ejercicio Nomina.png" alt="Modelo Entidad Relación Nómina">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación Extendido</p>
+  <a href="./Nómina-MERE.png" target="_blank" rel="noopener">
+    <img src="./Nómina-MERE.png" alt="Modelo Entidad Relación Extendido Nómina">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación — Vista General</p>
+  <a href="./Nómina-MER.png" target="_blank" rel="noopener">
+    <img src="./Nómina-MER.png" alt="Modelo Entidad Relación Nómina MER">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación Data Modeler</p>
+  <a href="./Nomina_MER_CF.png" target="_blank" rel="noopener">
+    <img src="./Nomina_MER_CF.png" alt="Modelo Entidad Relación Data Modeler">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Relacional Data Modeler</p>
+  <a href="./Nomina_MR.png" target="_blank" rel="noopener">
+    <img src="./Nomina_MR.png" alt="Modelo Relacional Data Modeler">
+  </a>
+</div>
+
+
+<div class="ejercicio">
+  <p class="section-label">Ejercicio</p>
+  <h3 class="section-title">Eat'n Go — Gestión de Franquicia de Comidas Rápidas</h3>
+  <p class="requisitos">
+    Eat'n Go, una empresa internacional dedicada a la comercialización de comidas rápidas, tiene la intención de ubicar una franquicia en nuestra localidad, siéndole necesario informatizar la gestión del negocio adaptándolo a las características propias de la clientela esperada. Esta empresa se dedica a la venta de pizzas y bocadillos, además de productos complementarios como refrescos, helados, etc.
+  </p>
+  <ul class="requisitos">
+    <li><strong>Supuesto 1:</strong> Tanto las pizzas como los bocadillos pueden condimentarse con un número de ingredientes de entre un conjunto de ellos con los que trabaja la empresa.</li>
+    <li><strong>Supuesto 2:</strong> Los ingredientes con los que se hacen los bocadillos pueden ser iguales o distintos a aquellos con los que se hacen las pizzas.</li>
+    <li><strong>Supuesto 3:</strong> El número de ingredientes que intervienen en un artículo que se vende (pizza o bocadillo) no está delimitado, pudiendo realizarse una venta de estos artículos sin ningún ingrediente. Es decir, la empresa vende también las bases de las pizzas y el pan con los que prepara las pizzas y los bocadillos, respectivamente.</li>
+    <li><strong>Supuesto 4:</strong> Cada artículo que vende la empresa (pizzas, bocadillos y productos complementarios) tiene un precio base asignado (el precio de estos productos cuando se venden de forma independiente), sin contar los ingredientes que pueden acompañar a alguno de estos tipos de artículos.</li>
+    <li><strong>Supuesto 5:</strong> Cada ingrediente tiene un precio para los bocadillos, mientras que para las pizzas todos los ingredientes tienen el mismo precio (los productos complementarios no llevan ingredientes).</li>
+    <li><strong>Supuesto 6:</strong> Los artículos se pueden vender en distinto tamaño, en cuyo caso el precio base es distinto según el tamaño, y el precio de los ingredientes también. Existen, actualmente, tres tamaños en los que se venden los bocadillos y las pizzas (pequeño, normal y grande).</li>
+    <li><strong>Supuesto 7:</strong> Las ventas se pueden hacer de tres formas diferentes: para consumir en el local, para recoger en el local y llevar o consumir en el mismo, y para servir a domicilio, en cuyo caso puede incrementarse un cargo añadido por el porte de la venta.</li>
+    <li><strong>Supuesto 8:</strong> Los artículos complementarios que vende la empresa tienen un precio fijo en base a su tipo, tamaño, sabor, etc.</li>
+    <li><strong>Supuesto 9:</strong> Los clientes pueden solicitar un servicio de la empresa (un pedido) tanto personalmente en el local como telefónicamente.</li>
+    <li><strong>Supuesto 10:</strong> En los pedidos telefónicos se tomarán los datos completos del cliente; en los de recoger sólo el documento nacional de identidad y su nombre completo, y en los de consumir en el local no se tomará ningún dato, a no ser que sea necesario por otras razones.</li>
+    <li><strong>Supuesto 11:</strong> A la empresa le interesa mantener información de todos los clientes a los que se les recoge información por dos razones: simplemente a escala informativa, de consumo y marketing; y para llevar el control del consumo y favorecer, mediante obsequios, a aquellos clientes que alcancen un cierto consumo.</li>
+    <li><strong>Supuesto 12:</strong> La empresa organiza, a veces, promociones para sus clientes. Éstas se basan en el obsequio de algún regalo o artículo de propaganda sobre la base de las unidades consumidas de alguno de los tipos de artículos (pizzas o bocadillos) o el cargo total alcanzado en los pedidos.</li>
+    <li><strong>Supuesto 13:</strong> Cuando la empresa obsequia a los clientes con algún artículo de promoción siempre recaba de los mismos toda su información y mantiene información sobre los regalos de promoción que se les entrega para, a ser posible, no hacer entregas duplicadas.</li>
+    <li><strong>Supuesto 14:</strong> La empresa cuenta con una serie de repartidores encargados del reparto a domicilio y de una batería de scooters. Cada reparto se le asigna a un repartidor con un scooter asignado, aunque un mismo scooter puede ser utilizado por distintos repartidores en distintos turnos.</li>
+    <li><strong>Supuesto 15:</strong> A la empresa le interesa conocer información del coste de los scooters sobre la base del consumo de gasolina de los mismos en la realización de los repartos.</li>
+    <li><strong>Supuesto 16:</strong> Los precios de todos los artículos que vende la empresa tienen el IVA incluido.</li>
+    <li><strong>Supuesto 17:</strong> En los pedidos a domicilio existe un mínimo en lo referente al valor del pedido para que éste sea servido. Si el valor no alcanza este mínimo y el cliente desea el servicio a domicilio, se le cobrará ese mínimo.</li>
+    <li><strong>Supuesto 18:</strong> La empresa cuenta con una serie de pizzas y bocadillos "estrellas", los cuales están formados por un conjunto de ingredientes predeterminados. Estos artículos tienen un nombre comercial único y su precio es el que resulta del acumulado de los ingredientes que incorporan.</li>
+  </ul>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación Extendido</p>
+  <a href="./Eat'nGo-MERE_CORREGIDO.png" target="_blank" rel="noopener">
+    <img src="./Eat'nGo-MERE_CORREGIDO.png" alt="Modelo Entidad Relación Extendido Eat'n Go">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación</p>
+  <a href="./Eat'nGo-MER_CORREGIDO.png" target="_blank" rel="noopener">
+    <img src="./Eat'nGo-MER_CORREGIDO.png" alt="Modelo Entidad Relación Eat'n Go">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación Data Modeler</p>
+  <a href="./Eat_NGo_MER_CF.png" target="_blank" rel="noopener">
+    <img src="./Eat_NGo_MER_CF.png" alt="Modelo Entidad Relación Data Modeler Eat'n Go">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Relacional Data Modeler</p>
+  <a href="./Eat_NGo_MR.png" target="_blank" rel="noopener">
+    <img src="./Eat_NGo_MR.png" alt="Modelo Relacional Data Modeler Eat'n Go">
+  </a>
+</div>
+
+
+  <div class="ejercicio">
+  <p class="section-label">Ejercicio</p>
+  <h3 class="section-title">Residuos Tóxicos — Gestión Ambiental</h3>
+  <p class="requisitos">
+    Se desea abordar la problemática ambiental de los residuos tóxicos y peligrosos cuya incorrecta gestión produce daños de gran importancia en el medio ambiente y en la salud del ser humano. La información a contemplar es la que corresponde desde que es producido el residuo por un centro o empresa productora hasta que éste se encuentra en lugar seguro, en donde recibe un tratamiento especial como puede ser la incineración, almacenamiento en depósitos de seguridad, etc.
+  </p>
+  <ul class="requisitos">
+    <li><strong>Supuesto 1:</strong> Una empresa productora produce un número amplio de residuos constituidos por un número variable de constituyentes químicos.</li>
+    <li><strong>Supuesto 2:</strong> Más de una empresa productora puede producir residuos con igual número de constituyentes químicos y con las mismas o distintas cantidades.</li>
+    <li><strong>Supuesto 3:</strong> Las empresas productoras asignan un código único a los residuos que producen, lo que les permite diferenciar distintas producciones de los mismos productos. Además, más de una empresa puede asignar el mismo código a los residuos que produce.</li>
+    <li><strong>Supuesto 4:</strong> Los residuos pueden ser trasladados en su totalidad, en partes, o no ser trasladados nunca.</li>
+    <li><strong>Supuesto 5:</strong> En cada traslado de residuos la cantidad que se traslada es enviada a un único destino.</li>
+    <li><strong>Supuesto 6:</strong> En una misma fecha las empresas productoras pueden ordenar más de un traslado de un mismo o distinto residuo (cantidades parciales) a un mismo o distinto destino.</li>
+    <li><strong>Supuesto 7:</strong> En cada traslado puede intervenir más de una empresa transportista usando el mismo o distinto transporte. Es interesante conocer el medio de transporte utilizado, los kilómetros realizados y el coste del trabajo.</li>
+    <li><strong>Supuesto 8:</strong> El residuo se traslada en un tipo de envase determinado por la empresa productora y que no varía a lo largo de su traslado.</li>
+    <li><strong>Supuesto 9:</strong> Es interesante conocer la fecha de llegada a destino y el tratamiento al que se someten los residuos una vez alcanzado el mismo.</li>
+    <li><strong>Supuesto 10:</strong> Por seguridad se considera que en un traslado sólo puede trasladarse un residuo de una empresa productora.</li>
+  </ul>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación Extendido</p>
+  <a href="./ResiduosTóxicos-MERE_CORREGIDO.png" target="_blank" rel="noopener">
+    <img src="./ResiduosTóxicos-MERE_CORREGIDO.png" alt="Modelo Entidad Relación Extendido Residuos Tóxicos">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación</p>
+  <a href="./ResiduosTóxicos-MER_CORREGIDO.png" target="_blank" rel="noopener">
+    <img src="./ResiduosTóxicos-MER_CORREGIDO.png" alt="Modelo Entidad Relación Residuos Tóxicos">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Entidad Relación Data Modeler</p>
+  <a href="./Residuos_Toxicos_MER_CF.png" target="_blank" rel="noopener">
+    <img src="./Residuos_Toxicos_MER_CF.png" alt="Modelo Entidad Relación Data Modeler Residuos Tóxicos">
+  </a>
+
+  <p class="section-label" style="margin-top: 1.25rem;">Modelo Relacional Data Modeler</p>
+  <a href="./Residuos_Toxicos_MR.png" target="_blank" rel="noopener">
+    <img src="./Residuos_Toxicos_MR.png" alt="Modelo Relacional Data Modeler Residuos Tóxicos">
+  </a>
+</div>
+    
+
+
+ </section>
+</Layout>
 
     <a href="/" class="btn-home reveal">← Volver al inicio</a>
   </section>
 </Layout>
 
 <style>
-  .page {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 40px;
-    background: var(--bg-soft);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-    text-align: center;
-    color: var(--text);
-  }
+ .page {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  text-align: center;
+  color: var(--text);
+}
 
-  .page img {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-  }
+.page img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
 
-  .coming {
-    margin-top: 20px;
-    opacity: .7;
-  }
+.coming {
+  margin-top: 20px;
+  opacity: .7;
+}
 
-  .btn-home {
+.btn-home {
   position: fixed;
   bottom: 30px;
-  left: 30px; 
-
+  left: 30px;
   padding: 12px 18px;
   background: var(--bg-soft);
   color: var(--text);
   text-decoration: none;
-
   border-radius: 12px;
   border: 1px solid var(--border);
   font-size: 14px;
   font-weight: 500;
-
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
   backdrop-filter: blur(6px);
-
   transition: all 0.3s ease;
   z-index: 1000;
 }
 
-
- .btn-home:hover {
+.btn-home:hover {
   background: var(--accent);
   color: white;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 15px 35px rgba(12, 12, 12, 0.4);
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+
+.section-title {
+  margin-top: 4px;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.requisitos {
+  text-align: left;
+}
+
+.ejercicio {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.page a {
+  display: block;
+}
+
+.page a img {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.page a:hover img {
+  opacity: 0.85;
+  transform: scale(1.01);
+}
+.ejercicio img {
+  border: 1px solid var(--border);
+}
+
+.page > p {
+  margin-bottom: 2rem;
+}
+.ejercicio .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.5;
+  margin: 1.25rem 0 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: block;
 }
 </style>
