@@ -10,6 +10,32 @@ import Layout from "../layouts/MainLayout.astro";
       requerimientos y diseño lógico de la base de datos.
     </p>
 
+      <!-- LINK GENERAL LUCIDCHART -->
+<div class="ejercicio" style="text-align: center;">
+  <p class="section-label">Diagramas completos</p>
+
+  <h3 class="section-title">
+    Ver todos los ejercicios en LucidChart
+  </h3>
+
+  <p class="requisitos">
+    Accede al tablero completo con todos los modelos
+    entidad-relación desarrollados durante el curso.
+  </p>
+
+  <div class="descargas">
+    <a
+      href="https://lucid.app/lucidchart/d3bb5c5e-0337-4185-a34e-8f40a6f41079/edit?existing=1&docId=d3bb5c5e-0337-4185-a34e-8f40a6f41079&shared=true&invitationId=inv_8a9ad474-9464-4208-b49d-0dccffdd550e&page=0_0#"
+      target="_blank"
+      rel="noopener"
+      class="btn-descarga"
+    >
+      Abrir en LucidChart →
+    </a>
+  </div>
+</div>
+
+
     <div class="ejercicio">
       <p class="section-label">Ejercicio 1</p>
       <h3 class="section-title">Modelo Entidad Relación Biblioteca</h3>
@@ -474,5 +500,31 @@ import Layout from "../layouts/MainLayout.astro";
   padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--border);
   display: block;
+}
+.descargas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-descarga {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-descarga:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 </style>
