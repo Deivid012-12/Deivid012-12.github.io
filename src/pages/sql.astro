@@ -10,11 +10,149 @@ import Layout from "../layouts/MainLayout.astro";
       Se presentan consultas, creación de tablas, relaciones, procedimientos
       almacenados y manipulación avanzada de datos.
     </p>
+
+
+    <div class="ejercicio">
+      <p class="section-label">Álgebra Relacional</p>
+      <h3 class="section-title">Taller álgebra relacional — Consultas sobre Empleados y Universidades</h3>
+      <p class="ejercicio-desc">
+        Dado un esquema de relaciones sobre empleados, universidades y jefes, se diseñan
+        expresiones de álgebra relacional para ocho consultas: búsqueda por universidad,
+        filtros por ciudad y salario, comparaciones entre empleados y jefes,
+        diferencias de conjuntos y consultas con división relacional.
+      </p>
+      <ul class="requisitos">
+        <li>Proyección y selección sobre joins de EMPLEADO, TRABAJA y UNIVERSIDAD.</li>
+        <li>Uso de renombramiento (ρ) para unificar EMPLEADO y JEFE en una sola relación.</li>
+        <li>Diferencia de conjuntos para empleados que <em>no</em> trabajan en la Universidad Central.</li>
+        <li>Consulta de máximo salarial comparado contra todos los empleados de Los Andes.</li>
+        <li>División relacional para hallar universidades presentes en las mismas ciudades que la Universidad Nacional.</li>
+      </ul>
+      <div class="descargas">
+        <a href="/Ejercicios_Algebra_Relacional.pdf" download class="btn-descarga">
+          Ejercicios Álgebra Relacional (PDF)
+        </a>
+      </div>
+    </div>
+
+
+    <div class="ejercicio">
+  <p class="section-label">SQL</p>
+  <h3 class="section-title">Sentencias Iniciales — DDL y DML</h3>
+  <ul class="requisitos">
+    <li>Creación de tablas SELECCION y JUGADOR con sus atributos y tipos de datos.</li>
+    <li>Inserción de 20 jugadores de la selección colombiana con su posición y código de selección.</li>
+    <li>Adición de llave primaria y llave foránea mediante ALTER TABLE.</li>
+  </ul>
+  <div class="descargas">
+    <a href="/Sentencias_Iniciales.sql" download class="btn-descarga">
+      Sentencias Iniciales (SQL)
+    </a>
+  </div>
+</div>
+
+    <div class="ejercicio">
+      <p class="section-label">SQL</p>
+      <h3 class="section-title">Creación de Tablas — DDL</h3>
+      <p class="ejercicio-desc">
+        Sentencias de definición de datos para construir la estructura de la base de datos
+        desde cero: creación de tablas, definición de tipos de datos, restricciones de
+        integridad y relaciones entre entidades.
+      </p>
+      <ul class="requisitos">
+        <li>Creación de tablas con <code>CREATE TABLE</code> y definición de columnas con sus tipos de datos.</li>
+        <li>Definición de llaves primarias (<code>PRIMARY KEY</code>) y llaves foráneas (<code>FOREIGN KEY</code>).</li>
+        <li>Restricciones de integridad: <code>NOT NULL</code>, <code>UNIQUE</code> y <code>CHECK</code>.</li>
+      </ul>
+      <div class="descargas">
+        <a href="/Clase_Creacion_Tablas.sql" download class="btn-descarga">
+          Creación de Tablas (SQL)
+        </a>
+      </div>
+    </div>
+
     
+    <div class="ejercicio">
+      <p class="section-label">SQL</p>
+      <h3 class="section-title">Sentencias de Clase — DML y Consultas</h3>
+      <p class="ejercicio-desc">
+        Consultas básicas y operaciones de manipulación de datos sobre la tabla
+        <code>employees</code> de Oracle, cubriendo selección, filtrado, ordenamiento y operadores lógicos.
+      </p>
+      <ul class="requisitos">
+        <li>Proyección de columnas con alias, concatenación de cadenas y operadores aritméticos sobre salario y comisión.</li>
+        <li>Filtrado con <code>WHERE</code>: comparaciones, operador <code>LIKE</code> con comodines, e <code>IS NULL</code> / <code>IS NOT NULL</code>.</li>
+        <li>Operadores lógicos <code>AND</code> y <code>OR</code> para combinar condiciones de filtrado.</li>
+        <li>Eliminación de duplicados con <code>DISTINCT</code> y ordenamiento con <code>ORDER BY DESC</code>.</li>
+      </ul>
+      <div class="descargas">
+        <a href="/Clase_Sentencias.sql" download class="btn-descarga">
+          Sentencias de Clase (SQL)
+        </a>
+      </div>
+    </div>
 
+    
+    <div class="ejercicio">
+      <p class="section-label">SQL</p>
+      <h3 class="section-title">Ejercicios JOIN — Combinación de Tablas</h3>
+      <p class="ejercicio-desc">
+        Ejercicios sobre los distintos tipos de JOIN en Oracle SQL, aplicados sobre las
+        tablas <code>employees</code>, <code>departments</code> y <code>jobs</code>.
+        Cada sentencia incluye comentarios explicando cuándo usar cada tipo.
+      </p>
+      <ul class="requisitos">
+        <li><code>INNER JOIN</code>: retorna solo los empleados que tienen departamento asignado.</li>
+        <li><code>LEFT JOIN</code>: retorna todos los empleados, con <code>NULL</code> si no tienen departamento.</li>
+        <li><code>RIGHT JOIN</code>: retorna todos los departamentos, con <code>NULL</code> si no tienen empleados.</li>
+        <li><code>FULL OUTER JOIN</code>: combina ambos lados, incluyendo registros huérfanos de cada tabla.</li>
+        <li><code>CROSS JOIN</code>: producto cartesiano entre empleados y tipos de trabajo (2.033 filas).</li>
+        <li><code>NATURAL JOIN</code>: unión automática por columnas con nombre idéntico en ambas tablas.</li>
+      </ul>
+      <div class="descargas">
+        <a href="/Ejercicios_Join.sql" download class="btn-descarga">
+          Ejercicios JOIN (SQL)
+        </a>
+      </div>
+    </div>
 
-    <a href="/" class="btn-home reveal">← Volver al inicio</a>
+   
+<div class="ejercicio">
+  <p class="section-label">Taller</p>
+  <h3 class="section-title">Taller Aplicado — SQL Avanzado y Transacciones ACID</h3>
+  <p class="ejercicio-desc">
+    Taller aplicado sobre el esquema HR de Oracle. Se implementa un proceso completo de 
+    ajuste salarial con diagnóstico previo, decisión de elegibilidad, prevalidación, 
+    ejecución transaccional con auditoría y validación posterior. El escenario trabaja 
+    sobre cuatro variantes con parámetros distintos de antigüedad, brechas salariales y 
+    topes por departamento.
+  </p>
+  <ul class="requisitos">
+    <li><strong>Diagnóstico:</strong> CTEs con promedio, máximo y conteo de empleados por departamento, ranking salarial con <code>RANK()</code> y detección de historial reciente en <code>T1_JOB_HISTORY</code>.</li>
+    <li><strong>Elegibilidad:</strong> Exclusión por departamento, antigüedad mínima de 3 años, historial reciente de 18 meses, cargo directivo y tamaño mínimo del departamento. Cada empleado recibe un <code>eligibility_flag</code> y un <code>exclusion_reason</code> explícito.</li>
+    <li><strong>Transacción ACID:</strong> <code>SAVEPOINT</code>, <code>UPDATE</code> de salarios, <code>INSERT</code> a tabla de auditoría usando secuencia 
+    <li><strong>Validación posterior:</strong> Empleados impactados, resumen económico, control de topes y registro de auditoría, todos filtrados por <code>execution_tag</code>.</li>
+  </ul>
+  <div class="descargas">
+    <a href="/01_setup_taller1.sql" download class="btn-descarga">
+      Setup del Entorno — Script 01 (SQL)
+    </a>
+    <a href="/02_datos_taller1.sql" download class="btn-descarga">
+      Datos y Casos Borde — Script 02 (SQL)
+    </a>
+    <a href="/03_template_entrega_taller1_v2.sql" download class="btn-descarga">
+      Plantilla de Entrega — Script 03 (SQL)
+    </a>
+    <a href="/AndromedaTaller.sql" download class="btn-descarga">
+      Solución del Taller (SQL)
+    </a>
+    <a href="/LAB.pdf" download class="btn-descarga">
+      Informe del Taller (PDF)
+    </a>
+  </div>
+</div>
   </section>
+  <a href="/" class="btn-home reveal">← Volver al inicio</a>
 </Layout>
 
 <style>
