@@ -10,6 +10,8 @@ import Layout from "../layouts/MainLayout.astro";
       Se presentan consultas, creación de tablas, relaciones, procedimientos
       almacenados y manipulación avanzada de datos.
     </p>
+    
+
 
     <a href="/" class="btn-home reveal">← Volver al inicio</a>
   </section>
@@ -17,51 +19,137 @@ import Layout from "../layouts/MainLayout.astro";
 
 <style>
   .page {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 40px;
-    background: #0f172a;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-    text-align: center;
-    color: #e5e7eb;
-  }
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  text-align: center;
+  color: var(--text);
+}
 
-  .code {
-    background: #020617;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: left;
-    margin-top: 20px;
-    overflow-x: auto;
-  }
-   .btn-home {
+.page img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.coming {
+  margin-top: 20px;
+  opacity: .7;
+}
+
+.btn-home {
   position: fixed;
   bottom: 30px;
-  left: 30px; 
-
+  left: 30px;
   padding: 12px 18px;
   background: var(--bg-soft);
   color: var(--text);
   text-decoration: none;
-
   border-radius: 12px;
   border: 1px solid var(--border);
   font-size: 14px;
   font-weight: 500;
-
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
   backdrop-filter: blur(6px);
-
   transition: all 0.3s ease;
   z-index: 1000;
 }
 
-
- .btn-home:hover {
+.btn-home:hover {
   background: var(--accent);
   color: white;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 15px 35px rgba(12, 12, 12, 0.4);
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+
+.section-title {
+  margin-top: 4px;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.requisitos {
+  text-align: left;
+}
+
+.ejercicio {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.page a {
+  display: block;
+}
+
+.page a img {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.page a:hover img {
+  opacity: 0.85;
+  transform: scale(1.01);
+}
+.ejercicio img {
+  border: 1px solid var(--border);
+}
+
+.page > p {
+  margin-bottom: 2rem;
+}
+.ejercicio .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.5;
+  margin: 1.25rem 0 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: block;
+}
+
+.descargas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-descarga {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-descarga:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 </style>
