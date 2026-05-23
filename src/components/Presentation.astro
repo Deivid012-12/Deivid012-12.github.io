@@ -5,7 +5,7 @@
     <h2 class="title">Presentación</h2>
 
     <div class="profile">
-      <img src="./avatar2.jpg" alt="Foto perfil" class="avatar" />
+      <img src="/avatar2.jpg" alt="Foto perfil" class="avatar" />
 
       <p class="desc">
         Bienvenido a mi espacio profesional. Aquí presento mi progreso académico,
@@ -13,16 +13,16 @@
       </p>
     </div>
 
-    
     <div class="video-wrapper">
 
       <div class="video-glow"></div>
 
       <div class="video-box">
-        <video controls preload="metadata" playsinline>
+        <video controls preload="auto" playsinline>
+          <source src="/Presentation2.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
           <source src="/Presentation2.mp4" type="video/mp4">
         </video>
-      </div>  
+      </div>
 
     </div>
 
@@ -31,36 +31,31 @@
 
 <style>
 
-
-.section{
+.section {
   padding: 90px 0;
   background: linear-gradient(180deg, #0f172a, #020617);
   border-top: 1px solid rgba(255,255,255,0.04);
 }
 
-
-.container{
+.container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
   text-align: center;
 }
 
-
-.title{
+.title {
   color: #f9fafb;
   font-size: 2.1rem;
   font-weight: 600;
   margin-bottom: 35px;
 }
 
-
-.profile{
+.profile {
   margin-bottom: 40px;
 }
 
-
-.avatar{
+.avatar {
   width: 165px;
   height: 165px;
   border-radius: 50%;
@@ -71,13 +66,12 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.avatar:hover{
+.avatar:hover {
   transform: scale(1.05);
   box-shadow: 0 14px 40px rgba(0,0,0,0.6);
 }
 
-
-.desc{
+.desc {
   color: #cbd5e1;
   max-width: 650px;
   margin: auto;
@@ -85,16 +79,14 @@
   line-height: 1.65;
 }
 
-
-.video-wrapper{
+.video-wrapper {
   position: relative;
   display: flex;
   justify-content: center;
   margin-top: 25px;
 }
 
-
-.video-glow{
+.video-glow {
   position: absolute;
   width: 560px;
   height: 320px;
@@ -102,40 +94,43 @@
   filter: blur(30px);
   z-index: 0;
   opacity: 0.8;
+  pointer-events: none;
 }
 
-
-.video-box video{
-  width:100%;
-  max-width:560px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  box-shadow:0 20px 50px rgba(0,0,0,0.6);
-  transition:.3s;
+.video-box {
+  position: relative;
+  z-index: 1;
 }
 
-.video-box video:hover{
-  transform:scale(1.02);
+.video-box video {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transition: .3s;
 }
 
+.video-box video:hover {
+  transform: scale(1.02);
+}
 
+@media (max-width: 768px) {
 
-@media (max-width: 768px){
-
-  .section{
+  .section {
     padding: 65px 0;
   }
 
-  .title{
+  .title {
     font-size: 1.7rem;
   }
 
-  .avatar{
+  .avatar {
     width: 135px;
     height: 135px;
   }
 
-  .video-glow{
+  .video-glow {
     width: 100%;
     height: 250px;
   }
